@@ -1,0 +1,253 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy", sans-serif;
+}
+*::selection {
+    color: #fff;
+    background-color: black;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #F7F7F7;
+}
+
+/* ——— NAVBAR ——— */
+#nav {
+    width: 100%;
+    height: 300px;
+    /* background-color: burlywood; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#nav-part1 {
+    height:300px;
+    overflow:hidden;
+}
+#nav-part1 svg{
+    display:block;
+}
+
+/* RIGHT SIDE (links + icons) */
+#nav-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* LINKS */
+#links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+#links a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #333;
+    font-weight: 800;
+    font-size: 80px;
+}
+#links a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+/* ICONS */
+#icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 80px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+#icons i {
+    font-size: 70px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+#icons i:hover {
+    transform: scale(1.2);
+}
+
+/* Cursor must NOT block clicks */
+#cursor {
+    height: 350px;
+    width: 350px;
+    background-color: rgb(90, 86, 80);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* PAGE 1 */
+#page1 {
+    min-height: 100vh;
+    width: 100%;
+    padding: 2vw;
+    padding-top: 15vh;
+}
+#page1 h1 {
+    font-size: 12vw;
+    text-transform: uppercase;
+    font-family: "Futura", sans-serif;
+    line-height: 0.9;
+    letter-spacing: -8px;
+}
+
+/* VIDEO */
+#video-container {
+    height: 100vh;
+    width: 100%;
+    margin-top: 1vw;
+}
+#video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#video-container #play {
+    padding: 3vw 2vw;
+    background-color: black;
+    color: #fff;
+    font-size: 1.3vw;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    scale: 0;
+}
+
+/* PAGE 2 */
+#page2 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    padding: 3vw 1vw;
+    align-items: center;
+    justify-content: space-between;
+}
+#page2 .elem {
+    height: 100%;
+    width: 31%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page2 .elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+}
+#page2 .elem .dets {
+    height: 50px;
+    width: 70%;
+    border-radius: 50px;
+    background-color: palegoldenrod;
+    position: absolute;
+    bottom: 10%;
+    z-index: 9;
+    transition: 0.3s;
+}
+#page2 .elem .dets:hover {
+    height: 200px;
+}
+
+/* PAGE 3 */
+#page3 {
+    min-height: 120vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.child {
+    height: 54vh;
+    width: 38vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.child img {
+    height: 100%;
+}
+#nav svg {
+    height: 300px;   
+    width: 300px
+}
+#page2 {
+    width: 100%;
+    padding: 80px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.elem {
+    width: 32%;                  /* 3 images in a row */
+    height: 90vh;                /* SAME height → bars align perfectly */
+    position: relative;
+    overflow: hidden;            /* prevents overflow */
+    border-radius: 10px;
+}
+
+.elem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* fills without stretching */
+    display: block;
+}
+
+/* The yellow bar */
+.dets {
+    position: absolute;
+    bottom: 20px;                /* always sits at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background: #f6efb1;
+    padding: 10px 25px;
+    border-radius: 20px;
+
+    font-size: 1.2vw;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    z-index: 10;
+}
+
+
+
+/* MOBILE */
+@media(max-width: 600px) {
+    #page1 {
+        padding-top: 25vh;
+    }
+    #page1 h1 {
+        font-size: 15.5vw;
+        letter-spacing: -3px;
+    }
+    #video-container {
+        height: 25vh;
+        margin-top: 3vw;
+    }
+}
